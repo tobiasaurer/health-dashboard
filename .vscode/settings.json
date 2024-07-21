@@ -1,0 +1,11 @@
+{
+"python.analysis.extraPaths": ["./scripts"],
+"editor.rulers": [90],
+
+"editor.formatOnSave": true,
+"editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
+"ruff.lint.run": "onSave",
+"editor.defaultFormatter": "charliermarsh.ruff"
+}

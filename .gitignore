@@ -1,0 +1,10 @@
+# Local sensitive data
+data/*
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter notebooks
+*.ipynb
