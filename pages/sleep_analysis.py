@@ -1,7 +1,7 @@
 import dash
 import dash_bootstrap_components as dbc
 import pandas as pd
-from dash import Input, Output, callback, dcc, html
+from dash import Input, Output, callback, html
 
 from src.components import (
     agg_level_dropdown,
