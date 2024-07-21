@@ -1,7 +1,7 @@
-# the style arguments for the sidebar. We use position:fixed and a fixed width
+# The style arguments for the sidebar. We use position:fixed and a fixed width
 SIDEBAR_STYLE = {
     "position": "fixed",
-    "top": 50,
+    "top": 0,
     "left": 0,
     "bottom": 0,
     "width": "16rem",
@@ -9,19 +9,13 @@ SIDEBAR_STYLE = {
     "background-color": "#f8f9fa",
 }
 
-# the styles for the main content position it to the right of the sidebar and
+# The styles for the main content position it to the right of the sidebar and
 # add some padding.
 CONTENT_STYLE = {
-    "margin-left": "18rem",
-    "margin-right": "2rem",
-    "margin-top": "2rem",
-    "padding": "2rem 1rem",
+    "margin-left": "4rem",
+    "margin-right": "0rem",
+    "margin-top": "4rem",
 }
 
-PAGE_STYLE = {
-    "top": 50,
-    "margin-left": "0rem",
-    "margin-right": "2rem",
-    # "margin-top": "1rem",
-    "padding": "2rem 1rem",
-}
+
+DROPDOWN_STYLE = {"width": "14rem"}

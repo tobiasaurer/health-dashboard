@@ -13,6 +13,16 @@ class DataSchema:
     SLEEP_END_TIME = "com.samsung.health.sleep.end_time"
 
 
+class Labels:
+    SLEEP_DATA_LABELS = {
+        DataSchema.MENTAL_RECOVERY: "Mental Recovery",
+        DataSchema.PHYSICAL_RECOVERY: "Physical Recovery",
+        DataSchema.SLEEP_DURATION: "Sleep Duration (h)",
+        DataSchema.SLEEP_SCORE: "Sleep Score",
+        DataSchema.WAKE_UP_DATE: "Date",
+    }
+
+
 def divide_by_sleep_duration(row, column) -> float:
     if row["sleep_duration"].sum() == 0:
         return None
@@ -110,5 +120,6 @@ def load_sleep_data() -> pd.DataFrame:
     data = load_data_paths()
     df_sleep = extract_sleep_data(data)
     df_sleep_scores = prepare_sleep_data(df_sleep)
+    df_sleep_scores = df_sleep_scores.reset_index()
 
     return df_sleep_scores

@@ -9,10 +9,10 @@ def aggregate_df(
     df: pd.DataFrame, time_colname: str, frequency_key: str, agg_operation: str
 ) -> pd.DataFrame:
     if agg_operation == "mean":
-        return df.resample(frequency_key, on=time_colname).mean()
+        return df.resample(frequency_key, on=time_colname).mean().reset_index()
 
     elif agg_operation == "sum":
-        return df.resample(frequency_key, on=time_colname).sum()
+        return df.resample(frequency_key, on=time_colname).sum().reset_index()
 
     else:
         return df

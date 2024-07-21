@@ -4,15 +4,17 @@ from dash_bootstrap_components.themes import BOOTSTRAP
 from src.components.layout import create_layout
 from src.data.sleep_data import load_sleep_data
 
+sleep_data = load_sleep_data()
 
-def main() -> None:
-    sleep_data = load_sleep_data()
-
-    app = Dash(external_stylesheets=[BOOTSTRAP])
-    app.title = "Health Dashboard"
-    app.layout = create_layout(app, sleep_data)
-    app.run()
+app = Dash(
+    __name__,
+    use_pages=True,
+    external_stylesheets=[BOOTSTRAP],
+    suppress_callback_exceptions=True,
+)
+app.title = "Health Dashboard"
+app.layout = create_layout()
 
 
 if __name__ == "__main__":
-    main()
+    app.run(debug=True)

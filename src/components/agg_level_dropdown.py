@@ -1,10 +1,9 @@
-from dash import Dash, dcc, html
+from dash import dcc, html
+
+from . import ids, styles
 
 
-from . import ids
-
-
-def render(app: Dash) -> html.Div:
+def render() -> html.Div:
     agg_levels = ["Day", "Week", "Month", "Quarter", "Year"]
 
     return html.Div(
@@ -17,6 +16,9 @@ def render(app: Dash) -> html.Div:
                 ],
                 value=agg_levels[0],
                 multi=False,
+                clearable=False,
+                persistence="session",
+                style=styles.DROPDOWN_STYLE,
             ),
         ]
     )
