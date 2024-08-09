@@ -65,6 +65,19 @@ layout = [
     Input(ids.AGG_LEVEL_DROPDOWN, "value"),
 )
 def get_data(agg_level):
+    """
+    Aggregate sleep data based on the specified aggregation level.
+
+    Parameters:
+    agg_level (str): The aggregation level, e.g. 'day', 'week', 'month', etc.
+
+    Returns:
+    dict: A dictionary representation of the aggregated sleep data, where each key is a column name and each value is a list of aggregated values.
+
+    Notes:
+    The aggregation is performed on the 'wake_up_date' column, and the aggregation operation is set to 'mean'.
+    The resulting data is returned as a dictionary with the 'records' orientation.
+    """
     agg_freq = parse_agg_level(agg_level)
     sleep_data_agg = aggregate_df(
         sleep_data,

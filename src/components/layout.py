@@ -1,13 +1,13 @@
 import dash
 import dash_bootstrap_components as dbc
-from dash import dcc, html
+from dash import Input, Output, State, dcc, html
 
 # from ..pages import cardio_data, home, sleep_data
 from . import styles
 
 
 def create_layout() -> html.Div:
-    sidebar = html.Div(
+    sidebar = dbc.Container(
         [
             dcc.Store(id="store", data={}),
             html.H2("Sidebar", className="display-4"),
@@ -28,9 +28,12 @@ def create_layout() -> html.Div:
             ),
         ],
         style=styles.SIDEBAR_STYLE,
+        fluid=False,
     )
 
-    content = html.Div(dash.page_container, style=styles.CONTENT_STYLE)
+    content = dbc.Container(
+        dash.page_container, style=styles.CONTENT_STYLE, fluid=False
+    )
     layout = dbc.Container([sidebar, content], fluid=False)
 
     return layout
